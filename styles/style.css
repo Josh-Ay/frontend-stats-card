@@ -24,7 +24,7 @@
 .content-image{
     background-image: url("../images/image-header-desktop.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     width: 50%;
     height: 100%;
     float: right;
