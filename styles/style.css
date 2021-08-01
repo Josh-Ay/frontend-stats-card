@@ -2,16 +2,22 @@
     margin: 0;
     padding: 0;
     font-size: 0.9375rem;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
 }
 .container{
     background-color: hsl(233, 47%, 7%);
     height: 100vh;
+    position: relative;
 }
 .content{
     position: relative;
     background-color: hsl(244, 38%, 16%);
     color: white;
-    height: 60%;
+    display: flex;
+    height: 27rem;
     width: 78%;
     top: 20%;
     left: 11%;
@@ -20,6 +26,7 @@
 .content-text{
     width: 50%;
     float: left;
+    top: 500px;
 }
 .content-image{
     background-image: url("../images/image-header-desktop.jpg");
@@ -81,38 +88,116 @@
     text-transform: lowercase;
     font-size: 1.25rem;
 }
-.attribution{
-    color: white;
-    position: absolute;
-    bottom: 10%;
-    right: 40%;
-    font-family: 'Lexend Deca', sans-serif;
-}
-.attribution a{
-    color: hsl(277, 64%, 61%);
+
+/* Medium Screen Devices */
+@media (min-width: 992px) and (max-width: 1200px){
+    .content-text{
+        width: 70%;
+    }
+    .content-text p{
+        width: 85%;
+    }
+    .bottom-text{
+        width: 90%;
+    }
 }
 
-@media(max-width:375px) {
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px){
+    .content{
+        flex-direction: column-reverse;
+        align-items: center;
+        top: 50%;
+    }
+    .content-text{
+        width: 100%;
+        clear: both;
+    }
+    .content-text p, .bottom-text{
+        padding-left: 0;
+        right: 10%;
+    }
+    .content-text p{
+        width: 100%;
+        padding: 8% 9% 0;
+    }
+    .content .bottom-text{
+        width: 80%;
+        padding: 0;
+        margin: 8% 9% 8%;
+    }
+    .content-image{
+        margin: 0%;
+        width: 100%;
+    }
+    .content-layer{
+        height: 25rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 767px){
+    .content{
+        top: 45%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .content-text{
+        width: 80%;
+        height: 100%;
+    }
+    .content-text p, .bottom-text{
+        padding: 0;
+    }
+    .content-text p{
+        width: 100%;
+        padding: 15% 0 5%;
+    }
+    p.middle-text{
+        padding: 6% 0 12%;
+    }
+    .bottom-text{
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 25%;
+    }
+    .content-image{
+        margin-top: 12%;
+        width: 100%;
+    }
+    .content-layer{
+        height: 22rem;
+    }
+}
+
+/* Very small mobile devices */
+@media(max-width:576px) {
     .container{
-        height: 130vh;
+        height: 157vh;
     }
     .content{
         top: 10%;
+        flex-direction: column-reverse;
+        height: 85%;
     }
     .content-image{
         background-image: url("../images/image-header-mobile.jpg");
         position: absolute;
         width: 100%;
-        height: 30%;
+        height: 32%;
+        top: -7%;
+    }
+    .content-layer{
+        height: 100%;
     }
     .content-image, .content-layer{
         border-radius: 10px 10px 0 0;
     }
     .content-text{
         position: absolute;
-        top: 30%;
+        top: 32%;
         height: 70%;
-        width: 100%;
+        width: 90%;
     }
     .top-text, .middle-text, .bottom-text{
         padding: 0;
@@ -120,27 +205,18 @@
     .top-text, .middle-text, .bottom-text{
         text-align: center;
         margin: auto;
-        margin-top: 30px;
-        
     }
     .top-text, .top-text span{
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
     .middle-text{
-        font-size: .75rem;
-        margin-bottom: 40px;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
     }
     .bottom-text{
         display: block;
     }
     .bottom-text .top{
         margin-bottom: 20px;
-    }
-    .attribution, .attribution a{
-        font-size: .55rem;
-    }
-    .attribution{
-        bottom: 4%;
-        right: 20%;
     }
 }
